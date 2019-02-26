@@ -1,21 +1,21 @@
 ## magento ip logger (magento versão 2.0.18)
 
-#### instalação automática
-
-```
-composer require efepimenta/module-iplog
-bin/magento module:status
-- verifique se o módulo está disponível
-bin/magento module:enable IpLog
-```
-
 #### instalação manual
 
 ```
-https://github.com/efepimenta/magento-ip/archive/0.0.1.tar.gz
-descompacte o arquivo e copie a pasta Efepimenta para app/code
+https://github.com/efepimenta/magento-module-iplog/archive/1.0.0.tar.gz
+descompacte o arquivo
+crie a pasta app/code/Efepimenta
+copie a pasta IpLog para dentro de app/code/Efepimenta
+bin/magento module:status
+- verifique se o módulo está disponível
+bin/magento module:enable Efepimenta_IpLog
+bin/magento setup:upgrade
+rm -rf var/di
+bin/magento setup:di:compile
+bin/magento cache:flush
 ```
 
-#### use
+#### uso
 
 deve aparecer uma mensagem com seu ip na página CMS e uma entrada no arquivo de log, em var/log/ip_log.log  
